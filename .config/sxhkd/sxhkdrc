@@ -42,18 +42,12 @@ super + ctrl + {_,shift + }Tab
   bspc node -d {next,prev}.local
 
 super + c
-  maim -u -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-
-super + ctrl + c
   maim -u -s | xclip -selection clipboard -t image/png
 
 super + shift + c
   maim -u | xclip -selection clipboard -t image/png
 
 super + alt + c
-  maim -u -i $(xdotool getactivewindow) ~/media/pictures/$(date +%s).png
-
-super + ctrl + alt + c
   maim -u -s ~/media/pictures/$(date +%s).png
 
 super + shift + alt + c
