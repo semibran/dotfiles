@@ -1,0 +1,40 @@
+!! black
+*.color0: #000000
+*.color8: #333333
+!! red
+*.color1: #cc3333
+*.color9: #990033
+!! green
+*.color2: #33cc33
+*.color10: #009933
+!! yellow
+*.color3: #cccc33
+*.color11: #999933
+!! blue
+*.color4: #3333cc
+*.color12: #003399
+!! magenta
+*.color5: #cc33cc
+*.color13: #993399
+!! cyan
+*.color6: #33cccc
+*.color14: #339999
+!! white
+*.color7: #cccccc
+*.color15: #ffffff
+
+urxvt.intensityStyles: false
+urxvt.depth: 32
+urxvt.font: xft:SFMono-Regular:size=10
+urxvt.cursorBlink: 1
+urxvt.scrollBar: false
+urxvt.foreground: 7
+urxvt.foreground_bold: 15
+urxvt.background: #000000
+urxvt.internalBorder: 16
+urxvt.perl-ext-common: default,matcher,resize-font
+urxvt.url-launcher: /usr/bin/xdg-open
+urxvt.matcher.button: 1
+
+rofi.bw: 0
+rofi.font: mono 9
