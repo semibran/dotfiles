@@ -25,7 +25,7 @@ precmd() {
   if [ $timer ]; then
     now=$(($(date +%s%N)/1000000))
     elapsed=$(($now-$timer))
-    export RPROMPT="%F{%0(?.green.red)}${elapsed}ms%f"
+    export RPROMPT="(%F{%0(?.green.red)}${elapsed}ms%f)"
     unset timer
   else
     export RPROMPT=""

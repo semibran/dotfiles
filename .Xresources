@@ -30,7 +30,7 @@ urxvt.cursorBlink: 1
 urxvt.scrollBar: false
 urxvt.foreground: 7
 urxvt.foreground_bold: 15
-urxvt.background: #000000
+urxvt.background: rgba:0000/0000/0000/ef00
 urxvt.internalBorder: 16
 urxvt.perl-ext-common: default,matcher,resize-font
 urxvt.url-launcher: /usr/bin/xdg-open
