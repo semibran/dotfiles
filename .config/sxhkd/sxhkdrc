@@ -1,0 +1,56 @@
+super + t
+  urxvt
+
+super + F5
+  pkill -USR1 -x sxhkd
+
+super + Escape
+  bspc wm -d > /tmp/bspwm.json && bspc quit && pkill Xorg
+
+super + {_,shift + }q
+  bspc node -{c,k}
+
+super + m
+  bspc desktop -l next
+
+super + r
+  bspc node @/ -R 90
+
+super + g
+  bspc node -s biggest.local
+
+super + f
+  bspc node -t '~floating'
+
+super + {_,shift + }Tab
+  bspc desktop -f {next,prev}.local
+
+super + {_,shift + }grave
+  bspc node -f {next,prev}.local
+
+super + ctrl + {_,shift + }Tab
+  bspc node -d {next,prev}.local
+
+super + c
+  peek
+
+super + s
+  maim -u -s | xclip -selection clipboard -t image/png
+
+super + shift + s
+  maim -u | xclip -selection clipboard -t image/png
+
+super + alt + s
+  maim -u -s ~/media/pictures/$(date +%s).png
+
+super + shift + alt + s
+  maim -u ~/media/pictures/$(date +%s).png
+
+XF86MonBrightness{Up,Down}
+  xbacklight -{inc,dec} 12.5
+
+XF86Audio{Raise,Lower}Volume
+  pamixer -{i,d} 5
+
+XF86AudioMute
+  pamixer -t

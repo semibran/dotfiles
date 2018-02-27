@@ -1,0 +1,26 @@
+autocmd BufWritePre * %s/\s\+$//e
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+map -a :call SyntaxAttr#SyntaxAttr()<CR>
+
+if &term =~ "^rxvt"
+  set t_Co=256
+  let &t_SI .= "\<Esc>[5 q"
+  let &t_EI .= "\<Esc>[2 q"
+  silent !echo -ne "\033]12;white\007"
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+endif
+
+set mouse=a
+set whichwrap=b,s,<,>,[,]
+set number
+set tabstop=2
+set shiftwidth=0
+set expandtab
+set directory=/tmp/.vim//
+set listchars=tab:»\ ,eol:¬,space:·
+set list
+set noswapfile
+syntax enable
+colorscheme synthetic
+hi Normal guibg=NONE ctermbg=NONE
