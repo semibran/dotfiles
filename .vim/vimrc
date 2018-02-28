@@ -1,8 +1,4 @@
-autocmd BufWritePre * %s/\s\+$//e
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
-map -a :call SyntaxAttr#SyntaxAttr()<CR>
-
+" rxvt exceptions: 256 colors, vertical bar in insert mode
 if &term =~ "^rxvt"
   set t_Co=256
   let &t_SI .= "\<Esc>[5 q"
@@ -11,16 +7,38 @@ if &term =~ "^rxvt"
   autocmd VimLeave * silent !echo -ne "\033]112\007"
 endif
 
+" remove trailing spaces on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" include SyntaxAttr
+map -a :call SyntaxAttr#SyntaxAttr()<CR>
+
+" aesthetics
+set cul    " enable styling on cursor line
+set number " display line numbers
+set list   " display invisibles
+set listchars=space:·,tab:»\ ,eol:¬
+
+" click to move cursor
 set mouse=a
+
+" automatically wrap to next line when x exceeds line width
 set whichwrap=b,s,<,>,[,]
-set number
+
+" expand tabs to 2 spaces
+set expandtab
 set tabstop=2
 set shiftwidth=0
-set expandtab
-set directory=/tmp/.vim//
-set listchars=tab:»\ ,eol:¬,space:·
-set list
+
+" disable swapfiles
 set noswapfile
+
+" highlight javascript in markdown files
+let g:markdown_fenced_languages = ["javascript", "js=javascript"]
+
+" syntax highlighting
 syntax enable
 colorscheme synthetic
+
+" make background transparent
 hi Normal guibg=NONE ctermbg=NONE
