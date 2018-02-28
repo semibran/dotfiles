@@ -7,23 +7,11 @@ if &term =~ "^rxvt"
   autocmd VimLeave * silent !echo -ne "\033]112\007"
 endif
 
-" remove trailing spaces on save
-autocmd BufWritePre * %s/\s\+$//e
-
 " include SyntaxAttr
 map -a :call SyntaxAttr#SyntaxAttr()<CR>
 
-" aesthetics
-set cul    " enable styling on cursor line
-set number " display line numbers
-set list   " display invisibles
-set listchars=space:·,tab:»\ ,eol:¬
-
-" click to move cursor
-set mouse=a
-
-" automatically wrap to next line when x exceeds line width
-set whichwrap=b,s,<,>,[,]
+" remove trailing spaces on save
+autocmd BufWritePre * %s/\s\+$//e
 
 " expand tabs to 2 spaces
 set expandtab
@@ -32,6 +20,30 @@ set shiftwidth=0
 
 " disable swapfiles
 set noswapfile
+
+" mobility
+set mouse=a               " click to move cursor
+set whichwrap=b,s,<,>,[,] " auto wrap to next line
+
+" move up/down by display lines
+noremap  <buffer> <silent> k gk
+noremap  <buffer> <silent> j gj
+noremap  <buffer> <silent> 0 g0
+noremap  <buffer> <silent> $ g$
+onoremap <silent> j gj
+onoremap <silent> k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
+" aesthetics
+set cul    " enable styling on cursor line
+set number " display line numbers
+set list   " display invisibles
+set listchars=space:·,tab:»\ ,eol:¬
 
 " highlight javascript in markdown files
 let g:markdown_fenced_languages = ["javascript", "js=javascript"]

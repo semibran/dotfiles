@@ -25,6 +25,7 @@ endfunction
 " color definitions
 let s:black  = { "cterm": "0",   "gui": "#000000" }
 let s:jet    = { "cterm": "233", "gui": "#121212" }
+let s:onyx   = { "cterm": "235", "gui": "#121212" }
 let s:gray   = { "cterm": "59",  "gui": "#5f5f5f" }
 let s:silver = { "cterm": "188", "gui": "#d7d7d7" }
 let s:white  = { "cterm": "15",  "gui": "#ffffff" }
@@ -47,6 +48,7 @@ let s:special    = { "fg": s:cyan }
 let s:warning    = { "fg": s:black, "bg": s:yellow }
 let s:error      = { "fg": s:white, "bg": s:red }
 let s:cursor     = { "fg": s:black, "bg": s:white }
+let s:highlight  = { "fg": s:white, "bg": s:onyx }
 let s:select     = { "bg": s:jet }
 let s:none       = {}
 
@@ -64,7 +66,7 @@ call s:h("Bold", s:bold)
 call s:h("Visual", s:select)
 call s:h("Cursor", s:cursor)
 call s:h("CursorLine", s:select)
-call s:h("CursorLineNr", s:select)
+call s:h("CursorLineNr", s:highlight)
 call s:h("LineNr", s:subtle)
 call s:h("NonText", s:subtle)
 call s:h("SpecialKey", s:subtle)
