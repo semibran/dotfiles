@@ -1,7 +1,4 @@
 #!/bin/sh
-
-feh --bg-fill --randomize --no-fehbg ~/media/pictures/wallpapers/*
-
 bspc rule -a Libreoffice state=tiled
 bspc rule -a Peek state=floating
 bspc config border_width 0
@@ -9,8 +6,5 @@ bspc config window_gap   8
 bspc config borderless_monocle    true
 bspc config gapless_monocle       true
 bspc config focus_follows_pointer true
-bspc monitor -d I II III IV
-
-xcompmgr -c &
-sxhkd
-
+bspc monitor eDP1 -d 0 1
+bspc monitor DP1 -d 2 3

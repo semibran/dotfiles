@@ -17,11 +17,15 @@ super + r
   bspc node @/ -R 90
 
 super + g
-  bspc node -s biggest.local
+  bspc node --swap biggest.local
 
 super + f
   bspc node -t '~floating'
 
+super + s
+  bspc desktop -s last
+
+# mobility
 super + {_,shift + }Tab
   bspc desktop -f {next,prev}.local
 
@@ -31,21 +35,20 @@ super + {_,shift + }grave
 super + ctrl + {_,shift + }Tab
   bspc node -d {next,prev}.local
 
+# screenshots
 super + c
-  peek
-
-super + s
   maim -u -s | xclip -selection clipboard -t image/png
 
-super + shift + s
+super + shift + c
   maim -u | xclip -selection clipboard -t image/png
 
-super + alt + s
+super + alt + c
   maim -u -s ~/media/pictures/$(date +%s).png
 
-super + shift + alt + s
+super + shift + alt + c
   maim -u ~/media/pictures/$(date +%s).png
 
+# media keys
 XF86MonBrightness{Up,Down}
   xbacklight -{inc,dec} 12.5
 

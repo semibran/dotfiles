@@ -1,14 +1,17 @@
 " rxvt exceptions: 256 colors, vertical bar in insert mode
 if &term =~ "^rxvt"
-  set t_Co=256
   let &t_SI .= "\<Esc>[5 q"
-  let &t_EI .= "\<Esc>[2 q"
+  let &t_EI .= "\<Esc>[0 q"
   silent !echo -ne "\033]12;white\007"
   autocmd VimLeave * silent !echo -ne "\033]112\007"
 endif
 
 " include SyntaxAttr
 map -a :call SyntaxAttr#SyntaxAttr()<CR>
+
+augroup filetypedetect
+  au BufRead,BufNewFile sxhkdrc setfiletype sxhkdrc
+augroup END
 
 " remove trailing spaces on save
 autocmd BufWritePre * %s/\s\+$//e
@@ -49,6 +52,7 @@ set listchars=space:·,tab:»\ ,eol:¬
 let g:markdown_fenced_languages = ["javascript", "js=javascript"]
 
 " syntax highlighting
+set t_Co=256
 syntax enable
 colorscheme synthetic
 
