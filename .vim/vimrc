@@ -11,15 +11,18 @@ map -a :call SyntaxAttr#SyntaxAttr()<CR>
 
 augroup filetypedetect
   au BufRead,BufNewFile sxhkdrc setfiletype sxhkdrc
+  au BufRead,BufNewFile *.conf setfiletype dosini
 augroup END
 
 " remove trailing spaces on save
 autocmd BufWritePre * %s/\s\+$//e
 
 " expand tabs to 2 spaces
-set expandtab
 set tabstop=2
 set shiftwidth=0
+set expandtab
+set smarttab
+set autoindent
 
 " disable swapfiles
 set noswapfile
@@ -28,7 +31,7 @@ set noswapfile
 set mouse=a               " click to move cursor
 set whichwrap=b,s,<,>,[,] " auto wrap to next line
 
-" move up/down by display lines
+" keybindings
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
 noremap  <buffer> <silent> 0 g0
@@ -41,11 +44,16 @@ vnoremap <Down> gj
 vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
+"inoremap {      {}<Left>
+"inoremap {<CR>  {<CR>}<Esc>O
+"inoremap {{     {
+"inoremap {}     {}
 
 " aesthetics
-set cul    " enable styling on cursor line
-set number " display line numbers
-set list   " display invisibles
+set linebreak " enable soft word wrap
+set cul       " enable styling on cursor line
+set number    " display line numbers
+set list      " display invisibles
 set listchars=space:·,tab:»\ ,eol:¬
 
 " highlight javascript in markdown files
