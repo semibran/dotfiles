@@ -24,14 +24,14 @@ else
   xrandr --output "$internal" --auto --output "$external" --mode 1280x1024 --right-of "$internal"
 fi
 
-feh --bg-fill ~/media/wallpapers/1366x768/* \
-    --bg-fill ~/media/wallpapers/1280x1024/* \
+feh --bg-fill ~/media/wallpapers/1280x1024/03.jpg \
+    --bg-fill ~/media/wallpapers/1366x768/00.jpg \
     --no-fehbg \
     --randomize
 
 # start programs
 pgrep redshift &> /dev/null || redshift &> /dev/null &
-xcompmgr -c &
+~/.config/lemonbar/lemonbar.sh &
 sxhkd &
-bspwm &
-exec urxvt
+urxvt &
+exec bspwm
