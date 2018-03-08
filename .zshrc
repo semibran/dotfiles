@@ -15,7 +15,7 @@ SAVEHIST=256
 bindkey -e
 eval $(dircolors -b)
 
-PROMPT='%B%F{blue}%1~%f%b> '
+PROMPT='%B%F{blue}%1~%f%b $ '
 
 preexec() {
   timer=$(($(date +%s%N)/1000000))
