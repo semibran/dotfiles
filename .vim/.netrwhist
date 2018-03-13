@@ -1,6 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/brandon/dev/patch/lib'
-let g:netrw_dirhist_2='/home/brandon/dev/hitbox/lib'
-let g:netrw_dirhist_3='/home/brandon/.config/bspwm'
-let g:netrw_dirhist_4='/home/brandon/dev/manifest/lib'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/brandon/dev/pkg-bump'
+let g:netrw_dirhist_2='/home/brandon/dev/pkg-bump/bin'
+let g:netrw_dirhist_3='/home/brandon/dev/pkg-bump'
+let g:netrw_dirhist_4='/home/brandon/dev/noise/src'
+let g:netrw_dirhist_5='/home/brandon/dev/rockman'
+let g:netrw_dirhist_6='/home/brandon/dev/rockman/src'
+let g:netrw_dirhist_7='/home/brandon/dev/pack/lib'
+let g:netrw_dirhist_8='/home/brandon/dev/pack/.git'
