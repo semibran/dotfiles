@@ -24,7 +24,7 @@ else
   xrandr --output "$internal" --auto --output "$external" --mode 1280x1024 --right-of "$internal"
 fi
 
-feh --bg-fill ~/media/wallpapers/1280x1024/03.jpg \
+feh --bg-fill ~/media/wallpapers/1280x1024/02.jpg \
     --bg-fill ~/media/wallpapers/1366x768/00.jpg \
     --no-fehbg \
     --randomize
